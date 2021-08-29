@@ -1,6 +1,6 @@
 Array:
 
-1. Find the maximum value in an array where the elements are first increasing and then decreasing.
+Problem 1. Find the maximum value in an array where the elements are first increasing and then decreasing.
 
 Input: Array of elements 
 array : 6, 7, 10, 15, 14, 12, 11
@@ -51,6 +51,28 @@ Algo:
 Time complexity: O(log n)
 Space complexity: O(1)
 
+---------------------------------------------------------------------------------------------
+
+Problem 2: 
+Find a number in a sorted array which is rotated.
+What is Rotate array? Suppose we have an array which is sorted and with elements 1, 2, 3, 4, 5, 6. If we rotate the array by two slots or times then it will look like 3, 4, 5, 6, 1, 2. 
+
+Input: 3, 4, 5, 6, 1, 2. element - 5
+Output: 2 which is the index of the element and if it is not found then return -1
+
+Approaches:
+
+1. Linear approach can be used which will take O(n) time complexity.
+
+2. Binary search approach.
+
+Here, the array is rotated so there are two sorted array within entire array and binary search works efficiently in the sorted array.
+
+Algorithm:
+
+1. Pick an element which is a mid then check if it is the element which is to be searched and if yes then return.
+2. If the element is less than the key element then check if the element is less or greater than the array[low] element.
+	a. If it is less means it lies in the left sorted array then as the element is greater
 
 
 
