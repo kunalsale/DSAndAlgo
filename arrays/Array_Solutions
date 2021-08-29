@@ -1,0 +1,61 @@
+Array:
+
+1. Find the maximum value in an array where the elements are first increasing and then decreasing.
+
+Input: Array of elements 
+array : 6, 7, 10, 15, 14, 12, 11
+Output: 15
+
+Idea: Search the element for which the previous element is less and next element is greater.
+
+Brute force:
+
+Linear search:
+1. Take a variable maxValue and assign Int.MIN_VALUE to it.
+2. Iterate through the array from 0 to n - 1.
+3. If maxValue is less than the array[currentIndex] then assign the maxValue = array[currentIndex]
+4.return the maxValue.
+
+Time complexity: O(n) as we are iterating entire array.
+Space complexity: O(1)
+
+Better solution:
+
+Hint: As we know that array is increasing then the decreasing which means it is partially sorted. Hence we can use binary search here but need to modify it as in binary tree entire array has to be sorted.
+
+Idea: 
+
+There can be 3 kinds of element.
+1. Element which is less than the right element and greater than the left element. eg: element 7 whose left is 6 and rigt is 10
+2.  Element which is less than the left element and greater than the right element. eg: element 12 whose left is 14 and rigt is 11
+3. Element which is greater than left as well as right and that is our element.
+
+So, in binary search if we found an element in the increasing part then move the left pointer and if the element picked in the binary search is in the decreasing part then move the right pointer.
+
+
+Corner case:
+
+1. If there is only one element then return that element.
+2. If there are two elements then return the max within them
+
+Algo:
+
+1. Check the corner cases.
+2. Take two pointers low and high and assign low to the zero th index and high to n - 1.
+3. Compute the mid index which will be (low + high) / 2
+4. Check the above conditions and see where the element lies in the array.
+	a. If it is in the increasing part then low = mid + 1
+	b. If it is in the decreasing part then high = mid - 1
+	c. if the element is greated than both the element then return the array[mid]
+
+
+
+
+
+
+
+
+
+
+
+
